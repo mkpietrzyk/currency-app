@@ -1,20 +1,20 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchNBPData} from '../Redux/Api/ApiActions'
+import {fetchNBPData,fetchNBPDataB} from '../Redux/Api/ApiActions'
 
 const mapStateToProps = state => ({
   apiData: state.api
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchNBPData: () => dispatch(fetchNBPData())
+  fetchNBPData: () => dispatch(fetchNBPData()),
 })
 
 
 class DashboardView extends React.Component {
 
-  componentWillMount() {
-    this.props.fetchNBPData()
+  componentDidMount() {
+    this.props.fetchNBPData();
   }
 
   render() {
@@ -29,6 +29,7 @@ class DashboardView extends React.Component {
     return (
         <div>
           <h2>lelele</h2>
+          <button>lelele</button>
         </div>
     )
   }
