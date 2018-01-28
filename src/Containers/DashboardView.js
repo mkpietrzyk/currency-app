@@ -1,5 +1,4 @@
 import React from 'react'
-import {Col, Grid, Row} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {fetchNBPData} from '../Redux/Api/ApiActions'
 
@@ -29,7 +28,7 @@ class DashboardView extends React.Component {
 
     return (
         <div>
-
+          <h2>lelele</h2>
         </div>
     )
   }

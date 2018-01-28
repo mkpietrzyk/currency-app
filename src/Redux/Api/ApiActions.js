@@ -7,9 +7,8 @@ export const fetchNBPData = () => dispatch => {
       }
   ).then(
       (serverData) => {
-        dispatch({type: GET_EPG_DATA_BEGIN})
-        dispatch({type: GET_EPG_DATA, epgChannelsData: serverData})
-        dispatch({type: GET_EPG_DATA_END})
+        console.log(serverData)
+
       }
   ).catch(
       (errorFetching) => {
