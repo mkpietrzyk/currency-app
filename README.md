@@ -1,19 +1,12 @@
-# Currency app)
+# Currency app
 
 ### Michał Pietrzyk
 
 ### Project description
 
 
-Basic SPA using connections with National Polish Bank API to get the demanded currencies values on the market by user.
+Basic SPA using connection with National Polish Bank API to get the requested currencies exchange values by user.
 
-### Some Features
-
-* App is ready to be fully functional with 'details' components about channels/series, if proper data given. Additional components can be just connected with Router already installed and configured inside app in root index.js file
-
-* App is fully Responsive (to be done)
-
-* App is Redux-ready, with Redux and store configured and simple data fetching.
 
 ### Featured libraries/frameworks
 
@@ -21,13 +14,13 @@ Basic SPA using connections with National Polish Bank API to get the demanded cu
 
     * React + Redux
     * National Polish Bank API: http://api.nbp.pl
+    * React Table: https://github.com/react-tools/react-table
 
 
 * Styling
 
     * styling done using SCSS files
-    * color pallete used:
-        * material design: https://material.io/color/#!/?view.left=0&view.right=0&primary.color=212121&secondary.color=FF6F00&primary.text.color=FAFAFA
+    * color pallete used (flatUI): http://www.flatuicolorpicker.com/
 
 
 ### How to run
