@@ -27,7 +27,7 @@ Basic SPA using connection with National Polish Bank API to get the requested cu
 
     * clone repository
     * install packages via 'npm install'
-    * run project via 'npm run' command
+    * run project via 'npm start' command
 
 
 ### Commits Shortcut Legend:
