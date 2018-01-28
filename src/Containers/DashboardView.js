@@ -1,9 +1,9 @@
 import React from 'react'
-import Select from 'react-select'
 
 import {connect} from 'react-redux'
 import {fetchNBPData} from '../Redux/Api/ApiActions'
 import {addToFavorites, removeFromFavorites} from "../Redux/App/AppActions";
+import {FavoritesTable} from "../Components/FavoritesTable/FavoritesTable";
 
 const mapStateToProps = state => ({
   currenciesArray: state.api.currencies,
@@ -24,12 +24,10 @@ class DashboardView extends React.Component {
   }
 
   _addToFavorites = (currency) =>{
-    console.log('selected, ' + currency);
     this.props.addToFavorites(currency);
   }
 
   _deletrFromFavorites = (currency) =>{
-    console.log(currency)
     this.props.removeFromFavorites(currency);
   }
 
@@ -41,23 +39,23 @@ class DashboardView extends React.Component {
           </div>
       )
     } else {
-      console.log(this.props.currenciesArray);
       return (
           <div>
             <ul>
               {this.props.currenciesArray.map(currency => {
                 return (
-                    <li key={currency.code} onClick={() => this._addToFavorites(currency)}>{currency.currency}</li>
+                    <li key={currency.code} onClick={() => this._addToFavorites(currency)}>{currency.currency} {currency.code} {currency.mid}</li>
                 )
               })}
             </ul>
             <ul>
               {this.props.favorites.map(currency => {
                 return (
-                    <li key={currency.code} onClick={() => this._deletrFromFavorites(currency)}>{currency.currency}</li>
+                    <li key={currency.code} onClick={() => this._deletrFromFavorites(currency)}>{currency.currency} {currency.code} {currency.mid}</li>
                 )
               })}
             </ul>
+            <FavoritesTable data={this.props.favorites}/>
           </div>
       )
     }
