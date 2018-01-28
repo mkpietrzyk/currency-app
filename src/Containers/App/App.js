@@ -7,7 +7,7 @@ import {
 
 import DashboardView from "../DashboardView";
 
-import styles from './GlobalStyles/GlobalStyles.css'
+import './GlobalStyles/GlobalStyles.css'
 
 export default () => {
   return (

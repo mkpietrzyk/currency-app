@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactTable from 'react-table'
-import styles from 'react-table/react-table.css'
+import 'react-table/react-table.css'
 
 
 export const FavoritesTable = (props) => {
@@ -17,7 +17,7 @@ export const FavoritesTable = (props) => {
     accessor: 'mid'
   }, {
     id: 'delete',
-    Header: 'delete',
+    Header: 'action',
     accessor: null,
     Cell: <span>delete</span>
   }]
@@ -34,10 +34,9 @@ export const FavoritesTable = (props) => {
           resizable={false}
           filterable={false}
           getTdProps={(state, rowInfo, column) => {
-
             return {
               onClick: () => {
-                if (column.Header === 'delete') {
+                if (column.id === 'delete') {
                   props.deleteRowFunc(rowInfo.original);
                 }
               }

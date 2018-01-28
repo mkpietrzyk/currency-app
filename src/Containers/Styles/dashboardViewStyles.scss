@@ -1,13 +1,44 @@
+h2{
+  text-align: center;
+}
+
 .dashboardViewContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .tableContainer {
   display: flex;
   flex-direction: row;
-  margin: 20px;
+
 }
+
+.table {
+  margin: 15px;
+  background-color: #336E7B;
+
+  .ReactTable{
+    margin: 15px;
+    width: 50vh;
+    color: #C5EFF7;
+    text-align: center;
+  }
+
+  .rt-tr-group{
+    transition: .3s ease-in;
+    &:hover {
+      cursor: pointer;
+      background-color: #C5EFF7;
+      color: #336E7B;
+    }
+  }
+
+  .rt-noData{
+    display: none;
+  }
+
+
+}
+
 

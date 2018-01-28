@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactTable from 'react-table'
-import styles from 'react-table/react-table.css'
+import 'react-table/react-table.css'
 
 
 export const NBPTable = (props) => {
@@ -27,7 +27,7 @@ export const NBPTable = (props) => {
           multiSort={false}
           resizable={false}
           filterable={false}
-          getTdProps={(state, rowInfo, column) => {
+          getTdProps={(state, rowInfo) => {
             return {
               onClick: () => {
                   props.addToFavoritesFunc(rowInfo.original);

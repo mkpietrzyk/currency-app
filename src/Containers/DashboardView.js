@@ -6,7 +6,7 @@ import {addToFavorites, removeFromFavorites} from "../Redux/App/AppActions";
 import {FavoritesTable} from "../Components/FavoritesTable/FavoritesTable";
 import {NBPTable} from "../Components/NBPTable/NBPTable";
 
-import styles from './Styles/dashboardViewStyles.css'
+import './Styles/dashboardViewStyles.css'
 
 const mapStateToProps = state => ({
   currenciesArray: state.api.currencies,
@@ -46,14 +46,20 @@ class DashboardView extends React.Component {
           <div className="dashboardViewContainer">
             <h1> Simple Currency App </h1>
             <div className="tableContainer">
-              <NBPTable
-                  data={this.props.currenciesArray}
-                  addToFavoritesFunc={this._addToFavorites}
-              />
-              <FavoritesTable
-                  data={this.props.favorites}
-                  deleteRowFunc={this._deleteFromFavorites}
-              />
+              <div className="table">
+                <h2> NBP Values </h2>
+                <NBPTable
+                    data={this.props.currenciesArray}
+                    addToFavoritesFunc={this._addToFavorites}
+                />
+              </div>
+              <div className="table">
+                <h2> Favourites </h2>
+                <FavoritesTable
+                    data={this.props.favorites}
+                    deleteRowFunc={this._deleteFromFavorites}
+                />
+              </div>
             </div>
           </div>
       )
