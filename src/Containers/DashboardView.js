@@ -29,6 +29,7 @@ class DashboardView extends React.Component {
   }
 
   _deletrFromFavorites = (currency) =>{
+    console.log(currency)
     this.props.removeFromFavorites(currency);
   }
 
@@ -53,7 +54,7 @@ class DashboardView extends React.Component {
             <ul>
               {this.props.favorites.map(currency => {
                 return (
-                    <li key={currency.code} onClick={() => this._deletrFromFavorites(currency.code)}>{currency.currency}</li>
+                    <li key={currency.code} onClick={() => this._deletrFromFavorites(currency)}>{currency.currency}</li>
                 )
               })}
             </ul>

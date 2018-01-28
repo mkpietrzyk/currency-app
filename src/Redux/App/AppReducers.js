@@ -17,8 +17,8 @@ export default (state = initialState, action = {}) => {
     case actionTypes.DELETE_CURRENCY_FROM_FAVORITES:
       return {
           ...state,
-        currencyToRemove: state.favorites.indexOf(action.currencyToRemove),
-        favorites: state.favorites.splice(action.currencyToRemove, 1)
+        currencyToRemove: action.currencyToRemove,
+        favorites: state.favorites.filter(item => item !== action.currencyToRemove)
       }
 
     case actionTypes.FLUSH_FAVORITES:
