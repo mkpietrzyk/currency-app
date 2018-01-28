@@ -18,8 +18,8 @@ export const FavoritesTable = (props) => {
   }, {
     id: 'delete',
     Header: 'delete',
-    accessor: prop => prop,
-    Cell: prop => <span onClick={() => props.deleteRowFunc(prop)}>delete</span>
+    accessor: null,
+    Cell: <span>delete</span>
   }]
 
 
@@ -27,12 +27,14 @@ export const FavoritesTable = (props) => {
       <ReactTable
           data={props.data}
           columns={columns}
+          minRows={0}
           showPagination={false}
           sortable={false}
           multiSort={false}
           resizable={false}
           filterable={false}
           getTdProps={(state, rowInfo, column) => {
+
             return {
               onClick: () => {
                 if (column.Header === 'delete') {
