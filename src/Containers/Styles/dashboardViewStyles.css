@@ -1,0 +1,30 @@
+h2 {
+  text-align: center; }
+
+.dashboardViewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.tableContainer {
+  display: flex;
+  flex-direction: row; }
+
+.table {
+  margin: 15px;
+  background-color: #336E7B; }
+  .table .ReactTable {
+    margin: 15px;
+    width: 50vh;
+    color: #C5EFF7;
+    text-align: center; }
+  .table .rt-tr-group {
+    transition: .3s ease-in; }
+    .table .rt-tr-group:hover {
+      cursor: pointer;
+      background-color: #C5EFF7;
+      color: #336E7B; }
+  .table .rt-noData {
+    display: none; }
+
+/*# sourceMappingURL=dashboardViewStyles.css.map */
