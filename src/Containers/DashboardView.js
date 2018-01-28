@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {fetchNBPData} from '../Redux/Api/ApiActions'
 import {addToFavorites, removeFromFavorites} from "../Redux/App/AppActions";
 import {FavoritesTable} from "../Components/FavoritesTable/FavoritesTable";
+import {NBPTable} from "../Components/NBPTable/NBPTable";
 
 const mapStateToProps = state => ({
   currenciesArray: state.api.currencies,
@@ -23,11 +24,11 @@ class DashboardView extends React.Component {
     this.props.fetchNBPData();
   }
 
-  _addToFavorites = (currency) =>{
+  _addToFavorites = (currency) => {
     this.props.addToFavorites(currency);
   }
 
-  _deletrFromFavorites = (currency) =>{
+  _deleteFromFavorites = (currency) => {
     this.props.removeFromFavorites(currency);
   }
 
@@ -40,22 +41,19 @@ class DashboardView extends React.Component {
       )
     } else {
       return (
-          <div>
-            <ul>
-              {this.props.currenciesArray.map(currency => {
-                return (
-                    <li key={currency.code} onClick={() => this._addToFavorites(currency)}>{currency.currency} {currency.code} {currency.mid}</li>
-                )
-              })}
-            </ul>
-            <ul>
-              {this.props.favorites.map(currency => {
-                return (
-                    <li key={currency.code} onClick={() => this._deletrFromFavorites(currency)}>{currency.currency} {currency.code} {currency.mid}</li>
-                )
-              })}
-            </ul>
-            <FavoritesTable data={this.props.favorites}/>
+          <div className="dashboardView">
+            <div className="tableContainer">
+              <NBPTable
+                  data={this.props.currenciesArray}
+                  addToFavoritesFunc={this._addToFavorites}
+              />
+            </div>
+            <div className="tableContainer">
+              <FavoritesTable
+                  data={this.props.favorites}
+                  deleteRowFunc={this._deleteFromFavorites}
+              />
+            </div>
           </div>
       )
     }

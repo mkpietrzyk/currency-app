@@ -4,7 +4,7 @@ import ReactTable from 'react-table'
 import styles from 'react-table/react-table.css'
 
 
-export const FavoritesTable = (props) => {
+export const NBPTable = (props) => {
 
   const columns = [{
     Header: 'name',
@@ -15,11 +15,6 @@ export const FavoritesTable = (props) => {
   }, {
     Header: 'mid',
     accessor: 'mid'
-  }, {
-    id: 'delete',
-    Header: 'delete',
-    accessor: prop => prop,
-    Cell: prop => <span onClick={() => props.deleteRowFunc(prop)}>delete</span>
   }]
 
 
@@ -35,9 +30,7 @@ export const FavoritesTable = (props) => {
           getTdProps={(state, rowInfo, column) => {
             return {
               onClick: () => {
-                if (column.Header === 'delete') {
-                  props.deleteRowFunc(rowInfo.original);
-                }
+                  props.addToFavoritesFunc(rowInfo.original);
               }
             }
           }}
@@ -45,7 +38,7 @@ export const FavoritesTable = (props) => {
   )
 }
 
-FavoritesTable.propTypes = {
+NBPTable.propTypes = {
   data: PropTypes.arrayOf(
       PropTypes.shape({
         currency: PropTypes.string,
@@ -53,10 +46,10 @@ FavoritesTable.propTypes = {
         mid: PropTypes.number
       })
   ).isRequired,
-  deleteRowFunc: PropTypes.func.isRequired
+  addToFavoritesFunc: PropTypes.func.isRequired
 }
 
-FavoritesTable.defaultProps = {
+NBPTable.defaultProps = {
   data: [{
     currency: 'name',
     code: 'NM',
