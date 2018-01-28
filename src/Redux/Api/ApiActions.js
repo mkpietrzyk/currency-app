@@ -8,7 +8,7 @@ export const fetchNBPData = () => dispatch => {
       }
   ).then(
       (currenciesData) => {
-        dispatch({type: actionTypes.GET_NBP_CURRENCIES_SUCCESS, currencies: currenciesData})
+        dispatch({type: actionTypes.GET_NBP_CURRENCIES_SUCCESS, currencies: currenciesData[0].rates})
       }
   ).catch(
       (errorFetching) => {
