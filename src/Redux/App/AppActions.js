@@ -8,7 +8,7 @@ export const removeFromFavorites = (itemIndex) => dispatch => {
   dispatch({type: actionTypes.DELETE_CURRENCY_FROM_FAVORITES, currencyToRemove: itemIndex})
 }
 
-export const flushFavorited = () => dispatch => {
+export const flushFavorites = () => dispatch => {
   dispatch({type: actionTypes.FLUSH_FAVORITES})
 }
 

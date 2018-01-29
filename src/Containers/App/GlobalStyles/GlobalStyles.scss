@@ -5,4 +5,17 @@
   justify-content: center;
   align-items: center;
   background-color: #C5EFF7;
+  color: #336E7B;
+}
+
+button.warning{
+  padding: 10px;
+  background-color: #96281B;
+  color: #C5EFF7;
+  border: 0;
+  transition: .3s ease-in;
+  &:hover{
+    cursor: pointer;
+    background-color: #22313F;
+  }
 }

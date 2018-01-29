@@ -1,5 +1,6 @@
 h2 {
-  text-align: center; }
+  text-align: center;
+  color: #C5EFF7; }
 
 .dashboardViewContainer {
   display: flex;
@@ -11,6 +12,10 @@ h2 {
   flex-direction: row; }
 
 .table {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   margin: 15px;
   background-color: #336E7B; }
   .table .ReactTable {

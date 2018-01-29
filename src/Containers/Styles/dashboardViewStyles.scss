@@ -1,5 +1,6 @@
 h2{
   text-align: center;
+  color: #C5EFF7;
 }
 
 .dashboardViewContainer {
@@ -11,10 +12,13 @@ h2{
 .tableContainer {
   display: flex;
   flex-direction: row;
-
 }
 
 .table {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   margin: 15px;
   background-color: #336E7B;
 

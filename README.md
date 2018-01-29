@@ -28,7 +28,9 @@ Basic SPA using connection with National Polish Bank API to get the requested cu
     * clone repository
     * install packages via 'npm install'
     * run project via 'npm start' command
-
+    * click on whichever currency you want as your fav
+    * click on 'delete' next to currency you want to get rid off from favs
+    * click on 'flush all data' button to erase all favourites data
 
 ### Commits Shortcut Legend:
 

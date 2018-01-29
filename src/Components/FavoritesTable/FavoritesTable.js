@@ -19,7 +19,7 @@ export const FavoritesTable = (props) => {
     id: 'delete',
     Header: 'action',
     accessor: null,
-    Cell: <span>delete</span>
+    Cell: <button className="warning">delete</button>
   }]
 
 
